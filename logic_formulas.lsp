@@ -49,7 +49,6 @@
 )
 
 (defun to_set (L)
-    ;(print L)
     (transform_set L '())
 )
 
@@ -115,7 +114,6 @@
 )
 
 (defun to_dnf (L N)
-;(print L)
  (cond ((null L) NIL)
        ((= N 0) (append (convert (car L) 0)  (to_dnf (cdr L) ( + N 1)) ))
        (T (append (cons '|| (convert (car L) 0)) (to_dnf (cdr L) (+ N 1) )) )
